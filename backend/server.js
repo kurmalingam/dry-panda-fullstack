@@ -11,10 +11,7 @@ app.use(cors());
 app.use(express.json());
 app.use('/api', authRoutes); // All auth-related routes
 
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
+mongoose.connect(process.env.MONGO_URI)
 .then(() => {
   console.log('Connected to MongoDB Atlas');
   app.listen(process.env.PORT, () =>
