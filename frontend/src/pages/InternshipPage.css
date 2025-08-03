@@ -1,0 +1,136 @@
+/* Make internship page full width + white background */
+.internship-page {
+  width: 100%;
+  background-color: white;
+  padding-top: 320px;
+  z-index: 1050;
+}
+
+#marquee {
+  width: 100%;
+  font-weight: bold;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+/* Gradient header bar */
+.page-header {
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 20px 15px;
+}
+
+/* Internship Card Styling */
+.internships{
+  padding: 20px;
+  padding-top: 5px;
+}
+.news-card {
+ background: linear-gradient(135deg, #f0f7f4, #e6e2f8);
+ border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  height: 100%;
+  border-radius: 12px;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Internship icons bigger + consistent */
+.news-card i {
+  font-size: 2.5rem;
+}
+
+/* Button enhancements */
+.read-btn {
+  margin-top: 10px;
+  border-radius: 20px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.read-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Footer fix */
+footer {
+  background: linear-gradient(90deg, #7d3c99, #28a745);
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* 🔹 Smallest screens (e.g. Moto, iPhone SE, 320px–375px) */
+@media (max-width: 375px) {
+  .internship-page {
+    padding-top: 1700px;
+  }
+
+  .news-card {
+    padding: 15px;
+  }
+
+  .news-card i {
+    font-size: 1.8rem;
+  }
+
+  .read-btn {
+    font-size: 0.85rem;
+    padding: 5px 10px;
+  }
+
+  #marquee {
+    font-size: 0.9rem;
+  }
+}
+
+/* 🔹 Slightly wider phones (376px–470px) */
+@media (min-width: 376px) and (max-width: 470px) {
+  .internship-page {
+    padding-top: 1500px;
+  }
+
+  .news-card {
+    padding: 18px;
+  }
+
+  .read-btn {
+    font-size: 0.9rem;
+  }
+
+  #marquee {
+    font-size: 1rem;
+  }
+}
+
+/* 🔹 Tablets and larger phones (471px–768px) */
+@media (min-width: 471px) and (max-width: 768px) {
+  .internship-page {
+    padding-top: 1300px;
+  }
+
+  .news-card {
+    padding: 20px;
+  }
+
+  .news-card i {
+    font-size: 2rem;
+  }
+
+  .read-btn {
+    font-size: 1rem;
+  }
+
+  #marquee {
+    font-size: 1.1rem;
+  }
+}

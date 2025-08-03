@@ -1,0 +1,140 @@
+/* === Color Variables === */
+:root {
+  --dark-green: #2f4f2f;
+  --light-green: #d3f1dd;
+  --medium-green: #81c784;
+  --accent-green: #4caf50;
+}
+
+/* === Utility Classes === */
+.bg-dark-green {
+  background-color: var(--dark-green) !important;
+}
+
+.bg-light-green {
+  background-color: var(--light-green) !important;
+}
+
+.text-dark-green {
+  color: var(--dark-green) !important;
+}
+
+.border-light-green {
+  border-color: var(--medium-green) !important;
+}
+
+/* === Button Styling === */
+.btn-dark-green {
+  background-color: var(--dark-green) !important;
+  color: white !important;
+  border: none !important;
+  transition: all 0.3s ease;
+}
+
+.btn-dark-green:hover {
+  background-color: #1e3e1e !important;
+  color: white !important;
+}
+
+/* === Contact Modal Specific Styles === */
+
+#contactModal {
+  z-index: 1060 !important; /* Above the navbar */
+}
+
+.contact-info-section {
+  background-color: #f8f9fa;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-item i {
+  font-size: 1rem;
+}
+
+.map-container {
+  transition: all 0.3s ease;
+}
+
+.map-container:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* === Close Button === */
+#contactModal .btn-close {
+  filter: brightness(0) invert(1);
+  opacity: 1;
+  background-size: 0.75rem;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+#contactModal .btn-close:hover {
+  opacity: 0.75;
+}
+
+/* === Mobile-first Responsive Adjustments === */
+@media (max-width: 768px) {
+  #contactModal .modal-dialog {
+    margin: 0.5rem auto;
+    max-width: 95%;
+  }
+
+  #contactModal .modal-header,
+  #contactModal .modal-body {
+    padding: 0.5rem;
+  }
+
+  #contactModal .contact-item {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  #contactModal .map-container,
+  #contactModal iframe {
+    height: 100px;
+  }
+
+  #contactModal .form-control,
+  #contactModal .btn {
+    font-size: 0.875rem;
+  }
+
+  #contactModal .modal-header {
+    padding: 0.5rem 0.75rem;
+  }
+
+  #contactModal .modal-title {
+    font-size: 0.95rem;
+    padding-right: 0.5rem;
+  }
+
+  #contactModal .btn-close {
+    background-size: 0.65rem;
+    width: 1.1rem;
+    height: 1.1rem;
+    margin-left: auto;
+  }
+}
+
+/* === Small Devices Only (576px - 768px) === */
+@media (min-width: 576px) and (max-width: 768px) {
+  #contactModal .modal-dialog {
+    max-width: 85%;
+  }
+
+  #contactModal .map-container,
+  #contactModal iframe {
+    height: 140px;
+  }
+}
