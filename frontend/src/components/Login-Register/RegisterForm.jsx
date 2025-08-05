@@ -122,12 +122,12 @@ const RegisterForm = () => {
       </div>
 
       <div className="form-group">
-        <input type="password" name="password" placeholder="Password" value={form.password} onChange={handleChange} />
+        <input type="password" name="password" placeholder="Password" value={form.password} onChange={handleChange} autoComplete="new-password"/>
         <small className="error">{errors.password}</small>
       </div>
 
       <div className="form-group">
-        <input type="password" name="confirmPassword" placeholder="Confirm Password" value={form.confirmPassword} onChange={handleChange} />
+        <input type="password" name="confirmPassword" placeholder="Confirm Password" value={form.confirmPassword} onChange={handleChange} autoComplete="new-password" />
         <small className="error">{errors.confirmPassword}</small>
       </div>
 
