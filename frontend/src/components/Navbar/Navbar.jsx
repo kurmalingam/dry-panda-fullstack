@@ -57,7 +57,7 @@ export default function Navbar({ isLoggedIn, setIsLoggedIn }) {
 
           <div className="login-wapper d-flex ps-lg-3">
             {isLoggedIn ? (
-              <button onClick={handleLogout} className="btn btn-outline-light px-3">
+              <button onClick={handleLogout} onClick={() => handleNavLinkClick()} className="btn btn-outline-light px-3">
                 <i className="bi bi-box-arrow-right me-2"></i>Logout
               </button>
             ) : (
