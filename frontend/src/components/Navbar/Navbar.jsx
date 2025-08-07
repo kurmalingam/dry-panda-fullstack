@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './Navbar.css';
 import PropTypes from 'prop-types';
 import { Link, useNavigate } from 'react-router-dom';
+import { Collapse } from 'bootstrap';
 
 export default function Navbar({ isLoggedIn, setIsLoggedIn }) {
   const navigate = useNavigate();
@@ -12,29 +13,19 @@ export default function Navbar({ isLoggedIn, setIsLoggedIn }) {
     navigate('/auth');                  // Redirect to login
   };
 
-  // ✅ Add Bootstrap collapse-on-click logic on nav-links
-  useEffect(() => {
-    const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
-    const navbarCollapse = document.querySelector(".navbar-collapse");
 
-    const handleCollapse = () => {
-      const bsCollapse = new window.bootstrap.Collapse(navbarCollapse, {
-        toggle: false,
-      });
-      bsCollapse.hide();
-    };
+ const handleNavLinkClick = () => {
+  const navbarCollapse = document.getElementById('navbarContent');
 
-    navLinks.forEach((link) => {
-      link.addEventListener("click", handleCollapse);
+  // Only collapse if screen width < 992px and menu is open
+  if (window.innerWidth < 992 && navbarCollapse?.classList.contains('show')) {
+    const bsCollapse = new Collapse(navbarCollapse, {
+      toggle: false
     });
+    bsCollapse.hide();
+  }
+};
 
-    // 🧹 Clean up on unmount
-    return () => {
-      navLinks.forEach((link) => {
-        link.removeEventListener("click", handleCollapse);
-      });
-    };
-  }, []);
 
 
   return (
@@ -57,10 +48,10 @@ export default function Navbar({ isLoggedIn, setIsLoggedIn }) {
 
         <div className="collapse navbar-collapse" id="navbarContent">
           <div className="navbar-nav mx-auto gap-lg-3">
-            <a className="nav-link px-3 active" href="#product-details">Product Details</a>
-            <a className="nav-link px-3 active" href="#newsroom-section">News Room</a>
-            <a className="nav-link px-3 active" href="#careers">Careers</a>
-            <a className="nav-link px-3 active" href="#about-section">About Us</a>
+            <a className="nav-link px-3 active" href="#product-details" onClick={() => handleNavLinkClick()}>Product Details</a>
+            <a className="nav-link px-3 active" href="#newsroom-section" onClick={() => handleNavLinkClick()}>News Room</a>
+            <a className="nav-link px-3 active" href="#careers" onClick={() => handleNavLinkClick()}>Careers</a>
+            <a className="nav-link px-3 active" href="#about-section" onClick={() => handleNavLinkClick()}>About Us</a>
             <a className="nav-link px-2" data-bs-toggle="modal" data-bs-target="#contactModal">Contact Us</a>
           </div>
 
