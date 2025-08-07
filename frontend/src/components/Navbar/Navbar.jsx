@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Navbar.css';
 import PropTypes from 'prop-types';
 import { Link, useNavigate } from 'react-router-dom';
@@ -11,6 +11,31 @@ export default function Navbar({ isLoggedIn, setIsLoggedIn }) {
     setIsLoggedIn(false);               // Update state
     navigate('/auth');                  // Redirect to login
   };
+
+  // ✅ Add Bootstrap collapse-on-click logic on nav-links
+  useEffect(() => {
+    const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+    const navbarCollapse = document.querySelector(".navbar-collapse");
+
+    const handleCollapse = () => {
+      const bsCollapse = new window.bootstrap.Collapse(navbarCollapse, {
+        toggle: false,
+      });
+      bsCollapse.hide();
+    };
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", handleCollapse);
+    });
+
+    // 🧹 Clean up on unmount
+    return () => {
+      navLinks.forEach((link) => {
+        link.removeEventListener("click", handleCollapse);
+      });
+    };
+  }, []);
+
 
   return (
     <nav className="navbar navbar-expand-lg fixed-top navbar-dark bg-dark-green">
