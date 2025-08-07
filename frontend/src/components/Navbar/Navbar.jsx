@@ -13,17 +13,26 @@ export default function Navbar({ isLoggedIn, setIsLoggedIn }) {
     navigate('/auth');                  // Redirect to login
   };
 
-  const handleNavLinkClick = () => {
-    const navbarCollapse = document.getElementById('navbarContent');
+ const handleNavLinkClick = () => {
+  const navbarCollapse = document.getElementById('navbarContent');
+  const navbarToggler = document.querySelector('.navbar-toggler');
 
-    // Only collapse if screen width < 992px and menu is open
-    if (window.innerWidth < 992 && navbarCollapse?.classList.contains('show')) {
-      const bsCollapse = Collapse.getInstance(navbarCollapse) || new Collapse(navbarCollapse, {
-        toggle: false
-      });
-      bsCollapse.hide();
+  // Only collapse if small screen and menu is open
+  if (window.innerWidth < 992 && navbarCollapse?.classList.contains('show')) {
+    const bsCollapse = Collapse.getInstance(navbarCollapse) || new Collapse(navbarCollapse, {
+      toggle: false
+    });
+
+    bsCollapse.hide();
+
+    // Manually reset toggler state to allow reopening
+    if (navbarToggler) {
+      navbarToggler.classList.add('collapsed');
+      navbarToggler.setAttribute('aria-expanded', 'false');
     }
-  };
+  }
+};
+
 
   return (
     <nav className="navbar navbar-expand-lg fixed-top navbar-dark bg-dark-green">
