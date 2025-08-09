@@ -2,3 +2,17 @@
   --text-primary: #343a40;
   --primary-dark: #0d6efd;
 }
+html, body {  
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  padding-top: 70px;
+  background-color: white !important;
+}
+
+#root {
+  min-height: 100%;
+  background-color: inherit;
+  width: 100%;
+}
