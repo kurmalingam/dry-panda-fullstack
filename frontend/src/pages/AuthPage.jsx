@@ -4,9 +4,12 @@ import AuthSelection from '../components/Login-Register/AuthSelection';
 import LoginForm from '../components/Login-Register/LoginForm';
 import RegisterForm from '../components/Login-Register/RegisterForm';
 import '../components/Login-Register/Auth.css';
+import './AuthPage.css';
 
 const AuthPage = ({ setIsLoggedIn }) => {
   return (
+    <>
+    <div className='main-auth'>
     <div className="main-login">
       <h1 id="title">Welcome to Dry Panda</h1>
 
@@ -18,6 +21,8 @@ const AuthPage = ({ setIsLoggedIn }) => {
         <Route path="register" element={<RegisterForm />} />
       </Routes>
     </div>
+    </div>
+    </>
   );
 };
 
