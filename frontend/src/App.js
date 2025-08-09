@@ -5,27 +5,30 @@ import Navbar from './components/Navbar/Navbar';
 import ContactModal from './components/ContactModal/ContactModal';
 import AuthPage from './pages/AuthPage';
 import InternshipPage from './pages/InternshipPage';
+import GlitterText from './components/GlitterText/GlitterText';
 import './App.css';
-
+import './index.css';
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false); 
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
+    <>
     <BrowserRouter>
-      {/* Navbar receives login state and handler */}
       <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
       <ContactModal />
-      
-     
-      <Routes>
-        <Route path='/' element={<h2>Home Page</h2>} />
-        <Route path='/auth/*' element={<AuthPage setIsLoggedIn={setIsLoggedIn} />} />
-         <Route path='/internship' element={<InternshipPage />} />
-        {/* Add more routes here */}
-      </Routes>
 
+        <Routes>
+          <Route path="/" element={
+            <>
+            <GlitterText />
+            </>
+           }/>
+          <Route path="/auth/*" element={<AuthPage setIsLoggedIn={setIsLoggedIn} />} />
+          <Route path="/internship" element={<InternshipPage />} />
+        </Routes>
     </BrowserRouter>
+    </>
   );
 }
 
