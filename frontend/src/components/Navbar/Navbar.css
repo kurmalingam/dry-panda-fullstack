@@ -3,7 +3,6 @@
  /* background: linear-gradient(135deg, #2e8b57, #225c38, #1a3d2f); */
  background: linear-gradient(90deg, #7d3c99, #28a745);
   text-align: center;
-  padding: 0.8rem 1rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
   z-index: 1050;
