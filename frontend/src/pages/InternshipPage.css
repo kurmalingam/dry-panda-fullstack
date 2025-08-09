@@ -2,7 +2,7 @@
 .internship-page {
   width: 100%;
   background-color: white;
-  padding-top: 320px;
+  padding-top: 150px;
   z-index: 1050;
 }
 
@@ -72,7 +72,7 @@ footer {
 /* 🔹 Smallest screens (e.g. Moto, iPhone SE, 320px–375px) */
 @media (max-width: 375px) {
   .internship-page {
-    padding-top: 1700px;
+    padding-top: 1600px;
   }
 
   .news-card {
